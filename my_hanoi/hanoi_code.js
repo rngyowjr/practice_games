@@ -39,4 +39,12 @@ class Game {
       return false
     }
   }
+
+  print() {
+    console.log(JSON.stringify(this.towers));
+  }
+
+  isWon() {
+    return (this.towers[2].length === 3)
+  }
 }
