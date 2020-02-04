@@ -30,4 +30,13 @@ class Game {
       return firstTower[firstTower.length - 1] < secondTower[secondTower.length - 1]
     }
   }
+
+  move(firstTowerIdx, secondTowerIdx) {
+    if (this.isValidMove(firstTowerIdx, secondTowerIdx)) {
+      this.towers[secondTowerIdx].push(this.towers[firstTowerIdx].pop());
+      return true
+    } else {
+      return false
+    }
+  }
 }
