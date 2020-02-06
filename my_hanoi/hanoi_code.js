@@ -3,10 +3,6 @@ class Game {
     this.towers = [[3, 2, 1], [], []];
   }
 
-  print() {
-    console.log(JSON.stringify(this.towers));
-  }
-
   promptMove(user, cb) {
     this.print();
     user.question("Pick a tower to take from", first => {
