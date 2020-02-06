@@ -1,4 +1,4 @@
-const Game = require('./game.js');
+const Game = require('./hanoi_code.js');
 const readline = require('readline');
 const user = readline.createInterface({
   input: process.stdin,
