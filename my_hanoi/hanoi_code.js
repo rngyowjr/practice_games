@@ -47,4 +47,20 @@ class Game {
   isWon() {
     return (this.towers[2].length === 3)
   }
+
+  run(user, finishCallback) {
+    this.promptMove(user, (firstTowerIdx, secondTowerIdx) => {
+      if (!this.move(firstTowerIdx, secondTowerIdx)) {
+        console.log("you can't make that move :(")
+      }
+
+      if (!this.isWon()) {
+        this.run(user, finishCallback);
+      } else {
+        this.print();
+        console.log("Winner Winner Chicken Dinner");
+        finishCallback();
+      }
+    });
+  }
 }
