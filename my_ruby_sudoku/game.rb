@@ -28,12 +28,16 @@ class Game
       pos.all? {|x| x.between?(0, board.size - 1)}
   end
 
+  def parse_pos(str)
+    str.split(",").map {|char| Integer(char)}
+  end
+
   def ask_val
     val = nil
     until val && valid_val?(val)
       puts "Enter a value between 1 and 9 (0 to reset the tile)"
       print "> "
-      val = parse_pos(gets.chomp)
+      val = parse_val(gets.chomp)
     end
     val
   end
@@ -41,5 +45,9 @@ class Game
   def valid_val?(val)
     val.is_a?(Integer) &&
       val.between?(0, 9)
+  end
+
+  def parse_val(str)
+    Integer(str)
   end
 end
