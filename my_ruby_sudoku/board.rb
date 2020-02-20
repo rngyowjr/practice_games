@@ -23,7 +23,7 @@ class Board
     @grid = grid
   end
 
-  def [](pos)]
+  def [](pos)
     row, col = pos
     grid[row][col]
   end

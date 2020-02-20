@@ -9,7 +9,7 @@ class Title
   end
 
   def color
-    given? :blue : :red
+    given? ? :blue : :red
   end
 
   def given?
