@@ -50,4 +50,21 @@ class Game
   def parse_val(str)
     Integer(str)
   end
+
+  def next_turn
+    board.render
+    pos = ask_pos
+    val = ask_val
+    board[pos] = val
+  end
+
+  def solved?
+    board.solved?
+  end
+
+  def run
+    next_turn until solved?
+    board.render
+    puts "You Win :)" 
+  end
 end
