@@ -28,7 +28,7 @@ class Board
     grid[row][col]
   end
 
-  def []=(pos, val)
+  def []=(pos, value)
     row, col = pos
     tile = grid[row][col]
     tile.value = value
@@ -55,7 +55,7 @@ class Board
     y = (idx % 3) * 3
 
     (x..x + 3).each do |i|
-      (y..y + 3).each do |i|
+      (y..y + 3).each do |j|
         tiles << self[[i, j]]
       end
     end
@@ -78,7 +78,7 @@ class Board
   end
 
   def solved_set?(group)
-    nums = titles.map(&:value)
+    nums = group.map(&:value)
     nums.sort == (1..9).to_a
   end
 
