@@ -77,7 +77,7 @@ class Board
       squares.all? {|squ| solved_set?(squ)}
   end
 
-  def solved_set(group)
+  def solved_set?(group)
     nums = titles.map(&:value)
     nums.sort == (1..9).to_a
   end

@@ -1,0 +1,3 @@
+Step 1: load game.rb in pry
+Step 2: set game = Game.from_file("puzzles/???")
+step 3: game.run
