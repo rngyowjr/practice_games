@@ -54,8 +54,8 @@ class Board
     x = (idx / 3) * 3
     y = (idx % 3) * 3
 
-    (x..x + 3).each do |i|
-      (y..y + 3).each do |j|
+    (x...x + 3).each do |i|
+      (y...y + 3).each do |j|
         tiles << self[[i, j]]
       end
     end
